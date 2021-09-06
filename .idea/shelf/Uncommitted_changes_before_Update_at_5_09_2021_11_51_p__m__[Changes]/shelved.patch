@@ -1,0 +1,93 @@
+Index: .idea/BuildingCop.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/BuildingCop.iml b/.idea/BuildingCop.iml
+new file mode 100644
+--- /dev/null	(date 1630903786518)
++++ b/.idea/BuildingCop.iml	(date 1630903786518)
+@@ -0,0 +1,46 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="WEB_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/object-reflector" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/version" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-code-coverage" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/phpunit" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-text-template" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-invoker" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-file-iterator" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-timer" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/type" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/diff" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/lines-of-code" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/object-enumerator" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/comparator" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/exporter" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/cli-parser" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/version" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/complexity" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/recursion-context" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/resource-operations" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/global-state" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/environment" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
++      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1630903726340)
++++ b/.idea/modules.xml	(date 1630903726340)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/BuildingCop.iml" filepath="$PROJECT_DIR$/.idea/BuildingCop.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1630903726364)
++++ b/.idea/vcs.xml	(date 1630903726364)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file

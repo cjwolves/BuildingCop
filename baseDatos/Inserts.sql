@@ -4,7 +4,7 @@ VALUES (1, 'trabajador','02/09/2021 3:40', '02/09/2021 3:40', 1, ''),
        (3, 'auxiliar' ,'04/09/2021 3:42', '04/09/2021 3:42', 1,''),
        (4, 'empleado' ,'05/09/2021 3:43', '05/09/2021 3:43', 1,''),
        (5, 'asistente' ,'06/09/2021 3:44', '06/09/2021 3:44', 1,'');
-       
+
 
 INSERT INTO usuario_s (usuId, usuLogin, usuPassword, usuRemember_Token, usuEstado, usuario_updated_at, usu_created_at, usuUsuSesion)
 VALUES (1, 'miguel', 'angel', '', 1, '02/09/2021 03:54', '02/09/2021 03:54', '' ),
@@ -12,7 +12,6 @@ VALUES (1, 'miguel', 'angel', '', 1, '02/09/2021 03:54', '02/09/2021 03:54', '' 
        (3, 'juan', 'carlos', '', 1, '02/09/2021 03:58', '02/09/2021 3:58', '' ),
        (4, 'samir', 'susa', '', 1, '02/09/2021 00:04', '02/09/2021 00:04', '' ),
        (5, 'no', 'identificado', '', 1, '02/09/2021 04:01', '02/09/2021 04:01', '' );
-
 
 
 INSERT INTO tipo_documento (tip_id, tip_estado, tip_created_at, tip_aud_estado,tip_nombre_documento, tip_sigla, tip_updated_at, tip_UsuSesion)
@@ -53,18 +52,17 @@ INSERT INTO material_construccion (mat_id, mat_nombre_material, mat_tipo_materia
     (5061,'Vinilo','Pintura', 56000, '02/06/2021 04:34', '03/09/2021 15:34','');
 
 INSERT INTO recibido (rec_id, rec_fecha_recibido, rec_fecha_modificacion, rec_created_at, rec_cantidad_recibido, rec_autEstado,rec_material_construccion_id,rec_num_factura, rec_updated_at, rec_usuSesion )
-VALUES (1, '03/09/2021 04:47', '03/09/2021 04:50', '03/09/2021 04:51', 1, 1, 1, 1, '03/09/2021 04:55', 1),
-(2, '03/09/2021 04:55', '03/09/2021 04:55', '03/09/2021 04:55', 1, 1, 2, 2, '03/09/2021 04:55', 1),
-(3, '03/09/2021 04:57', '03/09/2021 04:57', '03/09/2021 04:57', 1, 1, 3, 3, '03/09/2021 04:57', 1),
-(4, '03/09/2021 05:00', '03/09/2021 05:00', '03/09/2021 05:00', 1, 1, 4, 4, '03/09/2021 05:00', 1);
+VALUES (1, '03/09/2021 04:47', '03/09/2021 04:50', '03/09/2021 04:51', 1, 1, 1, 1, '03/09/2021 04:55', ''),
+(2, '03/09/2021 04:55', '03/09/2021 04:55', '03/09/2021 04:55', 1, 1, 2, 2, '03/09/2021 04:55', ''),
+(3, '03/09/2021 04:57', '03/09/2021 04:57', '03/09/2021 04:57', 1, 1, 3, 3, '03/09/2021 04:57', ''),
+(4, '03/09/2021 05:00', '03/09/2021 05:00', '03/09/2021 05:00', 1, 1, 4, 4, '03/09/2021 05:00', '');
 
 
 INSERT INTO proyecto (pro_id, material_construccion_mat_id, pro_tipo_proyecto, pro_nombre_proyecto, pro_numero_proyecto, pro_descripcion_proyecto, pro_fecha_inicio, pro_fecha_fin, pro_estado, pro_sede_id, pro_recibido_id, pro_trabajador_id, pro_created_at, pro_updated_at, pro_usuSesion, pro_autEstado)
-    VALUES (203, 1001, 'Residencial', 'Axxis', '6758', "Descripcion del mismo", '02/09/2021 12:34', '03/09/2021 21:34', 'activo', 1, 2, 3465, '28/03/2021 04:34', '13/012/2021 15:34', '', 1),
-    (204, 2001, 'Residencial', 'El golf', '5458', "Descripcion del mismo", '02/09/2021 12:34', '03/09/2021 21:34', 'activo', 2, 2, 3466, '28/03/2020 04:34', '13/012/2021 15:34', '', 1),
-    (205, 1003, 'Residencial', 'Grattacielo', '6759', "Descripcion del mismo", '02/12/2021 12:34', '03/09/2021 21:34', 'activo', 3, 2, 3467, '28/05/2021 04:34', '13/012/2021 15:34', '', 1),
-    (206, 1025, 'Residencial', 'lAngolo', '8758', "Descripcion del mismo", '02/07/2021 12:34', '03/09/2019 21:34', 'inactivo', 4, 2, 3468, '28/03/2021 04:34', '13/012/2021 15:34', '', 1),
-    (207, 5061, 'Comercial', 'Buenavista', '9658', "Descripcion del mismo", '02/04/2020 12:34', '03/09/2021 21:34', 'activo', 5, 2, 3469, '28/03/2019 04:34', '13/012/2021 15:34', '', 1);
+VALUES (203, 1001, 'Residencial', 'Axxis', '6758', "Descripcion del mismo", '02/09/2021 12:34', '03/09/2021 21:34', 'activo',1,10001, 1, '28/03/2021 04:34', '13/012/2021 15:34', '', 1),
+(204, 2001, 'Residencial', 'El golf', '5458', "Descripcion del mismo", '02/09/2021 12:34', '03/09/2021 21:34', 'activo', 2,10002, 2, '28/03/2020 04:34', '13/012/2021 15:34', '', 1),
+(205, 1003, 'Residencial', 'Grattacielo', '6759', "Descripcion del mismo", '02/12/2021 12:34', '03/09/2021 21:34', 'activo', 3,10003, 3, '28/05/2021 04:34', '13/012/2021 15:34', '', 1),
+(206, 1025, 'Residencial', 'lAngolo', '8758', "Descripcion del mismo", '02/07/2021 12:34', '03/09/2019 21:34', 'inactivo', 4, 100014, 4, '28/03/2021 04:34', '13/012/2021 15:34', '', 1);
 
 
 INSERT INTO trabajador (tra_id, tra_primer_nombre, tra_segundo_nombre, tra_primer_apellido, tra_segundo_apellido,tra_estado, tra_sede_id, tra_tipo_documento_id,tra_created_at, tra_updated_at, tra_usuSesion, tra_autEstado)
@@ -83,10 +81,10 @@ INSERT INTO utilizado (uti_id, uti_cantidad_utilizado, uti_fecha_uso, uti_fecha_
 
 INSERT INTO Stock (sto_id, sto_fecha_modificacion, sto_estado, sto_created_at, sto_cantidad_almacenado,sto_autEstado, sto_recibido_id, sto_updated_at, sto_usuSesion, sto_utilizado_id)
 VALUES 
-(1, '03/09/2021 04:27', 1, '03/09/2021 04:27', 1, 1, 1, '03/09/2021 04:27','', 1), 
-(2, '03/09/2021 04:34', 1, '03/09/2021 04:34', 1, 1, 1, '03/09/2021 04:34','', 1),  
-(3, '03/09/2021 04:37', 1, '03/09/2021 04:37', 1, 1, 1, '03/09/2021 04:37','', 1),
-(4, '03/09/2021 04:38', 1, '03/09/2021 04:38', 1, 1, 1, '03/09/2021 04:38','', 1);
+(1, '03/09/2021 04:27', 1, '03/09/2021 04:27', 1, 1, 10001, '03/09/2021 04:27','', 1),
+(2, '03/09/2021 04:34', 1, '03/09/2021 04:34', 1, 1, 10002, '03/09/2021 04:34','', 1),
+(3, '03/09/2021 04:37', 1, '03/09/2021 04:37', 1, 1, 10003, '03/09/2021 04:37','', 1),
+(4, '03/09/2021 04:38', 1, '03/09/2021 04:38', 1, 1, 100014, '03/09/2021 04:38','', 1);
 
 
 INSERT INTO registro (reg_id, reg_fecha_modificacion, reg_created_at, reg_comentarios, reg_autEstado, reg_numero_registro, reg_stock_id, reg_updated_at, reg_usuSesion)
