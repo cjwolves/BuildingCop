@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f67ef11-4468-42b1-9bc7-aed489500e83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/BuildingCop.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseDatos/Inserts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/baseDatos/Inserts.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/ConstantesConexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/ConstantesConexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630903717880</updated>
-      <workItem from="1630903722507" duration="2797000" />
+      <workItem from="1630903722507" duration="3493000" />
     </task>
     <servers />
   </component>
