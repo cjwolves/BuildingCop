@@ -1,6 +1,6 @@
 <?php
 
-    include_once PATH . 'modelos/ConBdMysql.php';
+    include_once "../../modelos/ConBdMysql.php";
 
     class ProyectoDAO extends ConBdMySql{
         public function __construct($servidor, $base, $loginDB, $passwordDB){
@@ -45,6 +45,8 @@
 
         public function insertar($registro){
 
+
+
             try {
 
                 $consulta= "INSERT INTO proyecto (pro_id, material_construccion_mat_id, pro_tipo_proyecto, pro_nombre_proyecto, pro_numero_proyecto, pro_descripcion_proyecto, pro_fecha_inicio, pro_fecha_fin) VALUES (:pro_id, :material_construccion_mat_id, :pro_tipo_proyecto, :pro_nombre_proyecto, :pro_numero_proyecto, :pro_descripcion_proyecto, :pro_fecha_inicio, :pro_fecha_fin);" ;
@@ -84,14 +86,15 @@
                 $descripcionProyecto = $registro[0]['pro_descripcion_proyecto'];
                 $fechaInicio = $registro[0]['pro_fecha_inicio'];
                 $fechaFin = $registro[0]['pro_fecha_fin'];
+                $sede = $registro[0]['pro_sede_id'];
 
                 if(isset($pro_id)){
-                    $consulta = "UPDATE proyecto SET  material_construccion_mat_id = ?, pro_tipo_proyecto = ?, pro_nombre_proyecto = ?, pro_numero_proyecto =?, pro_descripcion_proyecto = ?, pro_fecha_inicio =?, pro_fecha_fin = ?
+                    $consulta = "UPDATE proyecto SET  material_construccion_mat_id = ?, pro_tipo_proyecto = ?, pro_nombre_proyecto = ?, pro_numero_proyecto =?, pro_descripcion_proyecto = ?, pro_fecha_inicio =?, pro_fecha_fin = ?, pro_sede_id =?
                     WHERE pro_id = ?";
 
                     $actualizar = $this -> conexion -> prepare($consulta);
 
-                    $actualizacion = $actualizar->execute(array($materialConstruccion, $pro_id, $tipoProyecto, $nombreProyecto, $numeroProyecto, $descripcionProyecto, $fechaInicio, $fechaFin));
+                    $actualizacion = $actualizar->execute(array($materialConstruccion, $pro_id, $tipoProyecto, $nombreProyecto, $numeroProyecto, $descripcionProyecto, $fechaInicio, $fechaFin, $sede));
 
                     $this->cierreBd();
 

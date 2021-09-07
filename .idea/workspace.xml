@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4f67ef11-4468-42b1-9bc7-aed489500e83" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/modeloTrabajador/trabajadorDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/modeloTrabajador/trabajadorDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/modeloProyecto/proyectoDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/modeloProyecto/proyectoDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/Testing_ProyectoDAO/testing_ProyectoDAO_SeleccionarTodos.php" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/Testing_ProyectoDAO/testing_ProyectoDAO_SeleccionarTodos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/Testing_ProyectoDAO/testing_ProyectoDAO_actualizar.php" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/Testing_ProyectoDAO/testing_ProyectoDAO_actualizar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/Testing_ProyectoDAO/testing_ProyectoDAO_insertar.php" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/Testing_ProyectoDAO/testing_ProyectoDAO_insertar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebas/Testing_ProyectoDAO/testing_ProyectoDAO_seleccionarId.php" beforeDir="false" afterPath="$PROJECT_DIR$/pruebas/Testing_ProyectoDAO/testing_ProyectoDAO_seleccionarId.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +102,7 @@
       <workItem from="1630903722507" duration="3493000" />
       <workItem from="1630981293082" duration="3820000" />
       <workItem from="1631030726450" duration="244000" />
-      <workItem from="1631035279564" duration="2662000" />
+      <workItem from="1631035279564" duration="10156000" />
     </task>
     <servers />
   </component>
