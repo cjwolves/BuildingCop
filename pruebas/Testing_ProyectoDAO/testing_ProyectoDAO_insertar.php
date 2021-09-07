@@ -2,20 +2,23 @@
 
 
 include_once '../../modelos/ConstantesConexion.php';
-include_once PATH.'modelos/ConBdMysql.php';
-include_once PATH.'modelos/modeloLibros/LibroDAO.php';
+include_once "../../modelos/ConBdMysql.php";
+include_once "../../modelos/modeloProyecto/proyectoDAO.php";
 
 
-$registro['isbn']=128;
-$registro['titulo']="2252819 R1 CRUD INSERTAR";
-$registro['autor']="CAMILO";
-$registro['precio']="100000";
-$registro['categoriaLibro_catLibId']=2;
+$registro['pro_id']=7;
+$registro['material_construccion_mat_id'] = 1002;
+$registro['pro_tipo_proyecto']="Residencial";
+$registro['pro_nombre_proyecto']="Ferrol";
+$registro['pro_numero_proyecto']=223;
+$registro['pro_descripcion_proyecto'] = "Proyecto temporal0";
+$registro['pro_fecha_inicio'] = "0000-00-00 00:00:00";
+$registro['pro_fecha_fin'] = "0000-00-00 00:00:00";
+$registro['pro_estado']= 1;
 
+$proyecto=new ProyectoDAO(SERVIDOR, BASE, USUARIO_BD, CONTRASENIA_BD);
 
-$libros=new LibroDAO(SERVIDOR, BASE, USUARIO_BD, CONTRASENIA_BD);
-
-$libroInsertado=$libros->insertar($registro);
+$libroInsertado=$proyecto->insertar($registro);
 
 
 echo "<pre>";
