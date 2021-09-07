@@ -10,16 +10,16 @@ class SedeDAO extends ConBdMySql{
     public function seleccionarTodos(){
         $planconsulta = "SELECT * FROM sede;";
 
-        $registroUbicacion = $this->conexion->prepare($planconsulta);
-        $registroUbicacion->execute();
+        $registroSede = $this->conexion->prepare($planconsulta);
+        $registroSede ->execute();
 
-        $listadoRegistrosUbicacion = array();
+        $listadoRegistrosSede = array();
 
-        while( $registro = $registroUbicacion->fetch(PDO::FETCH_OBJ)){
-            $listadoRegistrosUbicacion[]=$registro;
+        while( $registro = $registroSede->fetch(PDO::FETCH_OBJ)){
+            $listadoRegistrosSede[]=$registro;
         }
           $this->cierreBd();
-          return $listadoRegistrosUbicacion;
+          return $listadoRegistrosSede;
     }
 
     public function seleccionarID($sId){

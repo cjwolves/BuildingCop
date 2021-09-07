@@ -2,7 +2,7 @@
 
 include_once PATH . 'modelos/ConBdMysql.php';
 
-class UtilizadoDAO extends ConBdMySql{
+class RegistroDAO extends ConBdMySql{
     public function __construct($servidor, $base, $loginDB, $passwordDB){
         parent::__construct($servidor, $base, $loginDB, $passwordDB);  
     }
@@ -10,16 +10,16 @@ class UtilizadoDAO extends ConBdMySql{
     public function seleccionarTodos(){
         $planconsulta = "SELECT * FROM registro;";
 
-        $registroUbicacion = $this->conexion->prepare($planconsulta);
-        $registroUbicacion->execute();
+        $registroRegistro = $this->conexion->prepare($planconsulta);
+        $registroRegistro->execute();
 
-        $listadoRegistrosUbicacion = array();
+        $listadoRegistrosRegistro = array();
 
-        while( $registro = $registroUbicacion->fetch(PDO::FETCH_OBJ)){
-            $listadoRegistrosUbicacion[]=$registro;
+        while( $registro = $registroRegistro->fetch(PDO::FETCH_OBJ)){
+            $listadoRegistrosRegistro[]=$registro;
         }
           $this->cierreBd();
-          return $listadoRegistrosUbicacion;
+          return $listadoRegistrosRegistro;
     }
 
     public function seleccionarID($sId){

@@ -10,12 +10,12 @@ class tipoDocumentoDAO extends ConBdMySql{
     public function seleccionarTodos(){
         $planconsulta = "SELECT * FROM tipoDocumento;";
 
-        $registroUbicacion = $this->conexion->prepare($planconsulta);
-        $registroUbicacion->execute();
+        $registroTipoDocumento = $this->conexion->prepare($planconsulta);
+        $registroTipoDocumento->execute();
 
         $listadoRegistrosTipoDocumento = array();
 
-        while( $registro = $registroUbicacion->fetch(PDO::FETCH_OBJ)){
+        while( $registro = $registroTipoDocumento->fetch(PDO::FETCH_OBJ)){
             $listadoRegistrosTipoDocumento[]=$registro;
         }
           $this->cierreBd();

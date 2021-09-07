@@ -10,16 +10,16 @@ class UtilizadoDAO extends ConBdMySql{
     public function seleccionarTodos(){
         $planconsulta = "SELECT * FROM utilizado;";
 
-        $registroUbicacion = $this->conexion->prepare($planconsulta);
-        $registroUbicacion->execute();
+        $registroUtilizado = $this->conexion->prepare($planconsulta);
+        $registroUtilizado->execute();
 
-        $listadoRegistrosUbicacion = array();
+        $listadoRegistrosUtilizado = array();
 
-        while( $registro = $registroUbicacion->fetch(PDO::FETCH_OBJ)){
-            $listadoRegistrosUbicacion[]=$registro;
+        while( $registro = $registroUtilizado->fetch(PDO::FETCH_OBJ)){
+            $listadoRegistrosUtilizado[]=$registro;
         }
           $this->cierreBd();
-          return $listadoRegistrosUbicacion;
+          return $listadoRegistrosUtilizado;
     }
 
     public function seleccionarID($sId){
