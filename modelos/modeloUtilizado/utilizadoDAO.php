@@ -89,10 +89,11 @@ class UtilizadoDAO extends ConBdMySql{
                 return ['actualizacion' => $actualizacion, 'mensaje' => 'Registro Actualizado'];
             }
         } catch (PDOException $pdoExc) {
-            return ['actualizacion' => $actualizacion, 'mensaje' => $pdoExc];
+            return ['actualizacion' => $actualizacion, 'mensaje' => 'Registro Actualizado'];
+            }
         }
         
-    }
+    
 
     public function eliminar($sId = array()){
 
@@ -136,11 +137,11 @@ class UtilizadoDAO extends ConBdMySql{
             if(isset($sId[0])){
                 $actualizar = "UPDATE utilizado SET usuEstado = ? WHERE uti_Id = ?";
                 $actualizacion = $this->conexion->prepare($actualizar);
-                $actualizacion = $actualizacion->execute(array($Estado, $sId[0]));
-                return ['actualizacion' => $actualizacion, 'mensaje' => 'Resgistro Desactivado'];
+                $actualizaciones = $actualizacion->execute(array($Estado, $sId[0]));
+                return ['actualizacion' => $actualizaciones, 'mensaje' => 'Resgistro Desactivado'];
             }
         } catch (PDOException $pdoExc) {
-            return ['actualizacion' => $actualizacion, 'mensaje' => $pdoExc];
+            return ['actualizacion' => $actualizaciones, 'mensaje' => $pdoExc];
         }
         
     }

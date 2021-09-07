@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`rol` (
   `rol_usuSesion` VARCHAR(20) NULL DEFAULT NULL,
   `rol_autEstado` TINYINT(1) NULL DEFAULT NULL,
   PRIMARY KEY (`rol_id_rol`),
-  UNIQUE INDEX `rol_tipo_rol_UNIQUE` (`rol_tipo_rol` ASC) VISIBLE)
+  UNIQUE INDEX `rol_tipo_rol_UNIQUE` (`rol_tipo_rol` ASC))
 ENGINE = InnoDB;
 
 
@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`usuario_s` (
   `usu_created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `usuario_updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`usuId`),
-  UNIQUE INDEX `usuLogin_UNIQUE` (`usuLogin` ASC) VISIBLE,
-  UNIQUE INDEX `usuPassword_UNIQUE` (`usuPassword` ASC) VISIBLE)
+  UNIQUE INDEX `usuLogin_UNIQUE` (`usuLogin` ASC),
+  UNIQUE INDEX `usuPassword_UNIQUE` (`usuPassword` ASC))
 ENGINE = InnoDB;
 
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`usuario_s_rol` (
   `usuario_s_usuId` INT NOT NULL,
   `Rol_rol_id_rol` INT NOT NULL,
   PRIMARY KEY (`usuario_s_usuId`, `Rol_rol_id_rol`),
-  INDEX `fk_usuario_s_rol_Rol1_idx` (`Rol_rol_id_rol` ASC) VISIBLE,
+  INDEX `fk_usuario_s_rol_Rol1_idx` (`Rol_rol_id_rol` ASC),
   CONSTRAINT `fk_usuario_s_rol_usuario_s2`
     FOREIGN KEY (`usuario_s_usuId`)
     REFERENCES `mydb`.`usuario_s` (`usuId`)
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`tipo_documento` (
   `tip_updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `tip_UsuSesion` VARCHAR(20) NULL DEFAULT NULL,
   PRIMARY KEY (`tip_id`),
-  UNIQUE INDEX `tip_sigla_UNIQUE` (`tip_sigla` ASC) VISIBLE)
+  UNIQUE INDEX `tip_sigla_UNIQUE` (`tip_sigla` ASC))
 ENGINE = InnoDB;
 
 
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`constructora` (
   `con_usuSesion` VARCHAR(20) NULL DEFAULT NULL,
   `tipo_documento_tip_id` INT(10) NOT NULL,
   PRIMARY KEY (`con_id`),
-  INDEX `fk_constructora_tipo_documento1_idx` (`tipo_documento_tip_id` ASC) VISIBLE,
+  INDEX `fk_constructora_tipo_documento1_idx` (`tipo_documento_tip_id` ASC),
   CONSTRAINT `fk_constructora_tipo_documento1`
     FOREIGN KEY (`tipo_documento_tip_id`)
     REFERENCES `proyecto`.`tipo_documento` (`tip_id`)
@@ -121,68 +121,6 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`constructora` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `mydb`.`usuario_s`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`usuario_s` (
-  `usuId` INT NOT NULL,
-  `usuLogin` VARCHAR(45) NULL,
-  `usuPassword` VARCHAR(45) NULL,
-  `usuRemeber_Token` VARCHAR(45) NULL,
-  `usuUsuSesion` VARCHAR(45) NULL,
-  `usu_created_at` TIMESTAMP NULL,
-  `usuEstado` INT NULL,
-  `usuario_updated_at` TIMESTAMP NULL,
-  `constructora_con_id` INT(10) NOT NULL,
-  `constructora_con_id_system_user` INT(10) NOT NULL,
-  PRIMARY KEY (`usuId`, `constructora_con_id`, `constructora_con_id_system_user`),
-  INDEX `fk_usuario_s_constructora1_idx` (`constructora_con_id` ASC, `constructora_con_id_system_user` ASC) VISIBLE,
-  CONSTRAINT `fk_usuario_s_constructora1`
-    FOREIGN KEY (`constructora_con_id`)
-    REFERENCES `proyecto`.`constructora` (`con_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`Rol`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Rol` (
-  `rol_updated_at` TIMESTAMP NULL,
-  `rol_created_at` TIMESTAMP NULL,
-  `rol_usuSesion` VARCHAR(45) NULL,
-  `rol_id_rol` INT NOT NULL,
-  `rol_autEstado` INT NULL,
-  `rol_tipo_rol` VARCHAR(45) NULL,
-  PRIMARY KEY (`rol_id_rol`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`usuario_s_rol`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`usuario_s_rol` (
-  `usu_r_Estado` INT NOT NULL,
-  `usuario_updated_at` TIMESTAMP NULL,
-  `usu_created_at` TIMESTAMP NULL,
-  `usuUsuSesion` VARCHAR(45) NULL,
-  `usuario_s_usuId` INT NOT NULL,
-  `Rol_rol_id_rol` INT NOT NULL,
-  PRIMARY KEY (`usuario_s_usuId`, `Rol_rol_id_rol`),
-  INDEX `fk_usuario_s_rol_Rol1_idx` (`Rol_rol_id_rol` ASC) VISIBLE,
-  CONSTRAINT `fk_usuario_s_rol_usuario_s2`
-    FOREIGN KEY (`usuario_s_usuId`)
-    REFERENCES `mydb`.`usuario_s` (`usuId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_usuario_s_rol_Rol1`
-    FOREIGN KEY (`Rol_rol_id_rol`)
-    REFERENCES `mydb`.`Rol` (`rol_id_rol`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 USE `proyecto` ;
 
@@ -197,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`ubicacion` (
   `ubi_usuSesion` VARCHAR(20) NULL DEFAULT NULL,
   `ubi_autEstado` TINYINT(1) NULL DEFAULT NULL,
   PRIMARY KEY (`ubi_id`),
-  UNIQUE INDEX `ubi_direccion_UNIQUE` (`ubi_direccion` ASC) VISIBLE)
+  UNIQUE INDEX `ubi_direccion_UNIQUE` (`ubi_direccion` ASC))
 ENGINE = InnoDB;
 
 
@@ -216,8 +154,8 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`sede` (
   `sed_usuSesion` VARCHAR(20) NULL DEFAULT NULL,
   `sed_autEstado` TINYINT(1) NULL DEFAULT NULL,
   PRIMARY KEY (`sed_id`, `sed_ubicacion_id`, `sed_constructora_id`),
-  INDEX `fk_sede_ubicacion1_idx` (`sed_ubicacion_id` ASC) VISIBLE,
-  INDEX `fk_sede_constructora1_idx` (`sed_constructora_id` ASC) VISIBLE,
+  INDEX `fk_sede_ubicacion1_idx` (`sed_ubicacion_id` ASC),
+  INDEX `fk_sede_constructora1_idx` (`sed_constructora_id` ASC),
   CONSTRAINT `fk_sede_ubicacion1`
     FOREIGN KEY (`sed_ubicacion_id`)
     REFERENCES `proyecto`.`ubicacion` (`ubi_id`)
@@ -243,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`material_construccion` (
   `mat_updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `mat_usuSesion` VARCHAR(20) NULL DEFAULT NULL,
   PRIMARY KEY (`mat_id`),
-  UNIQUE INDEX `mat_nombre_material_UNIQUE` (`mat_nombre_material` ASC) VISIBLE)
+  UNIQUE INDEX `mat_nombre_material_UNIQUE` (`mat_nombre_material` ASC))
 ENGINE = InnoDB;
 
 
@@ -262,9 +200,9 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`recibido` (
   `rec_usuSesion` VARCHAR(20) NULL DEFAULT NULL,
   `rec_autEstado` TINYINT(1) NULL DEFAULT NULL,
   PRIMARY KEY (`rec_id`),
-  INDEX `fk_recibido_material_construccion1_idx` (`rec_material_construccion_id` ASC) VISIBLE,
-  UNIQUE INDEX `rec_material_construccion_id_UNIQUE` (`rec_material_construccion_id` ASC) VISIBLE,
-  UNIQUE INDEX `rec_num_factura_UNIQUE` (`rec_num_factura` ASC) VISIBLE,
+  INDEX `fk_recibido_material_construccion1_idx` (`rec_material_construccion_id` ASC),
+  UNIQUE INDEX `rec_material_construccion_id_UNIQUE` (`rec_material_construccion_id` ASC),
+  UNIQUE INDEX `rec_num_factura_UNIQUE` (`rec_num_factura` ASC),
   CONSTRAINT `fk_recibido_material_construccion1`
     FOREIGN KEY (`rec_material_construccion_id`)
     REFERENCES `proyecto`.`material_construccion` (`mat_id`)
@@ -290,8 +228,8 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`trabajador` (
   `tra_usuSesion` VARCHAR(20) NULL DEFAULT NULL,
   `tra_autEstado` TINYINT(1) NULL DEFAULT NULL,
   PRIMARY KEY (`tra_id`),
-  INDEX `fk_trabajador_sede1_idx` (`tra_sede_id` ASC) VISIBLE,
-  INDEX `fk_trabajador_tipo_documento1_idx` (`tra_tipo_documento_id` ASC) VISIBLE,
+  INDEX `fk_trabajador_sede1_idx` (`tra_sede_id` ASC),
+  INDEX `fk_trabajador_tipo_documento1_idx` (`tra_tipo_documento_id` ASC),
   CONSTRAINT `fk_trabajador_sede1`
     FOREIGN KEY (`tra_sede_id`)
     REFERENCES `proyecto`.`sede` (`sed_id`)
@@ -326,13 +264,13 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`proyecto` (
   `pro_usuSesion` VARCHAR(20) NULL DEFAULT NULL,
   `pro_autEstado` TINYINT(1) NULL DEFAULT NULL,
   PRIMARY KEY (`pro_id`),
-  INDEX `fk_proyecto_material_construccion1_idx` (`material_construccion_mat_id` ASC) VISIBLE,
-  UNIQUE INDEX `material_construccion_mat_id_UNIQUE` (`material_construccion_mat_id` ASC) VISIBLE,
-  UNIQUE INDEX `pro_nombre_proyecto_UNIQUE` (`pro_nombre_proyecto` ASC) VISIBLE,
-  UNIQUE INDEX `pro_numero_proyecto_UNIQUE` (`pro_numero_proyecto` ASC) VISIBLE,
-  INDEX `fk_proyecto_sede1_idx` (`pro_sede_id` ASC) VISIBLE,
-  INDEX `fk_proyecto_recibido1_idx` (`pro_recibido_id` ASC) VISIBLE,
-  INDEX `fk_proyecto_trabajador1_idx` (`pro_trabajador_id` ASC) VISIBLE,
+  INDEX `fk_proyecto_material_construccion1_idx` (`material_construccion_mat_id` ASC),
+  UNIQUE INDEX `material_construccion_mat_id_UNIQUE` (`material_construccion_mat_id` ASC),
+  UNIQUE INDEX `pro_nombre_proyecto_UNIQUE` (`pro_nombre_proyecto` ASC),
+  UNIQUE INDEX `pro_numero_proyecto_UNIQUE` (`pro_numero_proyecto` ASC),
+  INDEX `fk_proyecto_sede1_idx` (`pro_sede_id` ASC),
+  INDEX `fk_proyecto_recibido1_idx` (`pro_recibido_id` ASC),
+  INDEX `fk_proyecto_trabajador1_idx` (`pro_trabajador_id` ASC),
   CONSTRAINT `fk_proyecto_material_construccion1`
     FOREIGN KEY (`material_construccion_mat_id`)
     REFERENCES `proyecto`.`material_construccion` (`mat_id`)
@@ -386,8 +324,8 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`stock` (
   `sto_updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `sto_usuSesion` VARCHAR(20) NULL DEFAULT NULL,
   PRIMARY KEY (`sto_id`),
-  INDEX `fk_stock_recibido1_idx` (`sto_recibido_id` ASC) VISIBLE,
-  INDEX `fk_stock_utilizado1_idx` (`sto_utilizado_id` ASC) VISIBLE,
+  INDEX `fk_stock_recibido1_idx` (`sto_recibido_id` ASC),
+  INDEX `fk_stock_utilizado1_idx` (`sto_utilizado_id` ASC),
   CONSTRAINT `fk_stock_recibido1`
     FOREIGN KEY (`sto_recibido_id`)
     REFERENCES `proyecto`.`recibido` (`rec_id`)
@@ -415,7 +353,7 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`registro` (
   `reg_usuSesion` VARCHAR(20) NULL DEFAULT NULL,
   `reg_autEstado` TINYINT(1) NULL DEFAULT NULL,
   PRIMARY KEY (`reg_id`),
-  INDEX `fk_registro_stock1_idx` (`reg_stock_id` ASC) VISIBLE,
+  INDEX `fk_registro_stock1_idx` (`reg_stock_id` ASC),
   CONSTRAINT `fk_registro_stock1`
     FOREIGN KEY (`reg_stock_id`)
     REFERENCES `proyecto`.`stock` (`sto_id`)
