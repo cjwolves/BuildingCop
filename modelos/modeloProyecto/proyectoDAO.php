@@ -9,7 +9,7 @@
 
         public function seleccionarTodos(){
             $planconsulta = "SELECT * FROM proyecto;";
-    
+
             $registroProyecto = $this->conexion->prepare($planconsulta);
             $registroProyecto->execute();
 
@@ -47,7 +47,7 @@
 
             try {
 
-                $consulta="INSERT INTO proyecto (pro_id, material_construccion_mat_id, pro_tipo_proyecto, pro_nombre_proyecto, pro_numero_proyecto, pro_descripcion_proyecto, pro_fecha_inicio, pro_fecha_fin) VALUES (:pro_id, :material_construccion_mat_id, :pro_tipo_proyecto, :pro_nombre_proyecto, :pro_numero_proyecto, :pro_descripcion_proyecto, :pro_fecha_inicio, :pro_fecha_fin);" ;
+                $consulta= "INSERT INTO proyecto (pro_id, material_construccion_mat_id, pro_tipo_proyecto, pro_nombre_proyecto, pro_numero_proyecto, pro_descripcion_proyecto, pro_fecha_inicio, pro_fecha_fin) VALUES (:pro_id, :material_construccion_mat_id, :pro_tipo_proyecto, :pro_nombre_proyecto, :pro_numero_proyecto, :pro_descripcion_proyecto, :pro_fecha_inicio, :pro_fecha_fin);" ;
 
                 $insertar=$this->conexion->prepare($consulta);
 
