@@ -47,12 +47,12 @@ class proyectoDAO extends ConBdMySql{
 
         try {
 
-            $consulta="INSERT INTO proyecto (pro_id, material_construccion_mat_id, pro_tipo_proyecto, usuEstado) VALUES (:usuId, :usuLogin, :usuPassword, :usuEstado);" ;
+            $consulta="INSERT INTO proyecto (pro_id, material_construccion_mat_id, pro_tipo_proyecto, pro_nombre_proyecto, pro_numero_proyecto, pro_descripcion_proyecto, pro_fecha_inicio, pro_fecha_fin, pro_estado) VALUES (:pro_id, :material_construccion_mat_id, :pro_tipo_proyecto, :pro_nombre_proyecto, :pro_numero_proyecto, :pro_descripcion_proyecto, :pro_fecha_inicio, :pro_fecha_fin, :pro_estado);" ;
 
             $insertar=$this->conexion->prepare($consulta);
 
-            $insertar -> bindParam(":usuId", $registro['usuId']);
-            $insertar -> bindParam(":usuLogin", $registro['usuLogin']);
+            $insertar -> bindParam(":pro_id", $registro['pro_id']);
+            $insertar -> bindParam(":material_construccion_mat_id", $registro['material_construccion_mat_id']);
             $insertar -> bindParam(":usuPassword", $registro['usuPassword']);
             $insertar -> bindParam(":usuEstado", $registro['usuEstado']);
 
