@@ -24,7 +24,7 @@ class SedeDAO extends ConBdMySql{
 
     public function seleccionarID($sId){
 
-        $consulta="SELECT * FROM sede WHERE tip_id=?";
+        $consulta="SELECT * FROM sede WHERE sed_id=?";
 
         $lista=$this->conexion->prepare($consulta);
         $lista->execute(array($sId[0]));
@@ -47,11 +47,11 @@ class SedeDAO extends ConBdMySql{
 
         try {
             
-            $consulta="INSERT INTO sede (sedeId, usuLogin, usuPassword, usuEstado) VALUES (:ubiId, :usuLogin, :usuPassword, :usuEstado);" ;
+            $consulta="INSERT INTO sede (sedId, usuLogin, usuPassword, usuEstado) VALUES (:sedId, :usuLogin, :usuPassword, :usuEstado);" ;
 
             $insertar=$this->conexion->prepare($consulta);
 
-            $insertar -> bindParam(":utiId", $registro['utiId']);
+            $insertar -> bindParam(":sedId", $registro['sedId']);
             $insertar -> bindParam(":usuLogin", $registro['usuLogin']);
             $insertar -> bindParam(":usuPassword", $registro['usuPassword']);
             $insertar -> bindParam(":usuEstado", $registro['usuEstado']);
@@ -74,15 +74,15 @@ class SedeDAO extends ConBdMySql{
 
             $login = $registro[0]['usuLogin'];
             $password = $registro[0]['usuPassword'];
-            $ubiId = $registro[0]['uti_Id'];
+            $ubiId = $registro[0]['sed_Id'];
             
             if(isset($uti_Id)){
                 $consulta = "UPDATE sede SET  usuLogin = ?, usuPassword = ?
-                WHERE uti_Id = ?";
+                WHERE sed_Id = ?";
                 
                 $actualizar = $this -> conexion -> prepare($consulta);
 
-                $actualizacion = $actualizar->execute(array($login, $password, $uti_Id));
+                $actualizacion = $actualizar->execute(array($login, $password, $sed_Id));
 
                 $this->cierreBd();
 
@@ -96,10 +96,10 @@ class SedeDAO extends ConBdMySql{
 
     public function eliminar($sId = array()){
 
-        $consulta = "DELETE FROM ubicacion WHERE uti_Id = :uti_Id;";
+        $consulta = "DELETE FROM sede WHERE sed_Id = :sed_Id;";
 
         $eliminar = $this->conexion->prepare($consulta);
-        $eliminar->bindParam(':uti_Id', $sId[0],PDO::PARAM_INT);
+        $eliminar->bindParam(':sed_Id', $sId[0],PDO::PARAM_INT);
         $resultado = $eliminar->execute();
 
         $this->cierreBd();
@@ -118,7 +118,7 @@ class SedeDAO extends ConBdMySql{
             $Estado = 1;
 
             if(isset($sId[0])){
-                $actualizar = "UPDATE sede SET usuEstado = ? WHERE uti_Id = ?";
+                $actualizar = "UPDATE sede SET usuEstado = ? WHERE sed_Id = ?";
                 $actualizar = $this->conexion->prepare($actualizar);
                 $actualizar = $actualizar->execute(array($Estado, $sId[0]));
                 return ['actualizacion' => $actualizar, 'mensaje' => 'Resgistro Activado'];
@@ -134,7 +134,7 @@ class SedeDAO extends ConBdMySql{
             $Estado = 0;
 
             if(isset($sId[0])){
-                $actualizar = "UPDATE sede SET usuEstado = ? WHERE uti_Id = ?";
+                $actualizar = "UPDATE sede SET usuEstado = ? WHERE sed_Id = ?";
                 $actualizacion = $this->conexion->prepare($actualizar);
                 $actualizacion = $actualizacion->execute(array($Estado, $sId[0]));
                 return ['actualizacion' => $actualizacion, 'mensaje' => 'Resgistro Desactivado'];

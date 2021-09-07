@@ -2,7 +2,7 @@
 
 include_once PATH . 'modelos/ConBdMysql.php';
 
-class UbicacionDAO extends ConBdMySql{
+class tipoDocumentoDAO extends ConBdMySql{
     public function __construct($servidor, $base, $loginDB, $passwordDB){
         parent::__construct($servidor, $base, $loginDB, $passwordDB);  
     }
@@ -77,7 +77,7 @@ class UbicacionDAO extends ConBdMySql{
             $tipId = $registro[0]['tip_Id'];
             
             if(isset($tip_Id)){
-                $consulta = "UPDATE ubicacion SET  usuLogin = ?, usuPassword = ?
+                $consulta = "UPDATE tipoDocumento SET  usuLogin = ?, usuPassword = ?
                 WHERE tip_Id = ?";
                 
                 $actualizar = $this -> conexion -> prepare($consulta);
