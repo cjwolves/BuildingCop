@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f67ef11-4468-42b1-9bc7-aed489500e83" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modelos/modeloProyecto/proyectoDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/modeloProyecto/proyectoDAO.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +96,7 @@
       <updated>1630903717880</updated>
       <workItem from="1630903722507" duration="3493000" />
       <workItem from="1630981293082" duration="3820000" />
+      <workItem from="1631030726450" duration="244000" />
     </task>
     <servers />
   </component>
