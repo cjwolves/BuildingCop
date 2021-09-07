@@ -3,15 +3,15 @@
 
 include_once '../../modelos/ConstantesConexion.php';
 include_once PATH.'modelos/ConBdMysql.php';
-include_once PATH.'modelos/modeloLibros/LibroDAO.php';
+include_once PATH.'modelos/modeloSede/SedeDAO.php';
 
 $sId=array(258);
 
-$libros=new LibroDAO(SERVIDOR, BASE, USUARIO_BD, CONTRASENIA_BD);
+$sede=new SedeDAO(SERVIDOR, BASE, USUARIO_BD, CONTRASENIA_BD);
 
 
-$libroElimandoLogico=$libros->eliminarLogico($sId);
+$sedeElimandoLogico=$libros->eliminarLogico($sId);
 
 echo "<pre>";
-print_r($libroElimandoLogico);
+print_r($sedeElimandoLogico);
 echo "</pre>";

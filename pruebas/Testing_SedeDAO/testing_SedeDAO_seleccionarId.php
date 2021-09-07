@@ -3,15 +3,15 @@
 
 include_once '../../modelos/ConstantesConexion.php';
 include_once PATH.'modelos/ConBdMysql.php';
-include_once PATH.'modelos/modeloLibros/LibroDAO.php';
+include_once PATH.'modelos/modeloSede/SedeDAO.php';
 
 $sId=array(5);
 
 
-$libros=new LibroDAO(SERVIDOR, BASE, USUARIO_BD, CONTRASENIA_BD);
+$sede=new SedeDAO(SERVIDOR, BASE, USUARIO_BD, CONTRASENIA_BD);
 
-$libroSeleccionado=$libros->seleccionarId($sId);
+$sedeSeleccionado=$sede->seleccionarId($sId);
 
 echo "<pre>";
-print_r($libroSeleccionado);
+print_r($sedeSeleccionado);
 echo "</pre>";
