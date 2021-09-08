@@ -8,7 +8,7 @@ $registro[]['isbn'] = 387;
 $registro[]['titulo'] = "2252819 CRUD INSERTAR";
 $registro[]['autor'] = "Henry";
 $registro[]['precio'] = "1000";
-$registro[]['categoriaLibro_catLibId'] = 2;
+$registro[]['categoriaTipoDocumento_tipId'] = 2;
 
 $tipo_documentoActualizado = new TipoDocumentoDAO(SERVIDOR, BASE, USUARIO_BD, CONTRASENIA_BD);
 $resultadoActualizacion = $tipo_documentoActualizado->actualizar($registro);
